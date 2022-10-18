@@ -104,6 +104,7 @@ public class Enemy : MonoBehaviour
 
     private void Destroy()
     {
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
+        Destroy(gameObject);
     }
 }

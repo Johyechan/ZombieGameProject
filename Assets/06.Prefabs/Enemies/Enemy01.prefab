@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5939266662356428524}
   - component: {fileID: 5939266662356428515}
   - component: {fileID: 5939266662356428513}
+  - component: {fileID: -6700309320793774428}
   - component: {fileID: 5939266662356428512}
   - component: {fileID: 5939266662356428519}
   - component: {fileID: 5939266662356428525}
@@ -108,6 +109,21 @@ MonoBehaviour:
   damage: 0.5
   currentHp: 30
   maxHp: 30
+  experience_reward: 400
+--- !u!114 &-6700309320793774428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5939266662356428518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 804bdd831819307428f1c904df77d286, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dropItemPrefab: {fileID: 2804363128690401656, guid: 2d7c5ec50ab52d1489bee0d59a8cfdbf, type: 3}
+  chance: 0.635
 --- !u!58 &5939266662356428512
 CircleCollider2D:
   m_ObjectHideFlags: 0

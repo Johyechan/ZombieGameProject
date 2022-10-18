@@ -13,7 +13,7 @@ public class Level : MonoBehaviour
     {
         get
         {
-            return level * 500;
+            return level * 600;
         }
     }
 
