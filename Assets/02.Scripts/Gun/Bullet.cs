@@ -12,7 +12,7 @@ public class Bullet : MonoBehaviour
 
     void Start()
     {
-        Invoke("DestroyBullet", 1.5f);
+        Invoke("DestroyBullet", 1f);
         anim = GetComponent<Animator>();
     }
 
