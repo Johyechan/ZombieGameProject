@@ -23,9 +23,6 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float maxHp = 50f;
     [SerializeField] int experience_reward = 400;
 
-    bool follow = true;
-    bool canMove = true;
-
     private void Start()
     {
         rend = GetComponent<SpriteRenderer>();
@@ -107,6 +104,7 @@ public class Enemy : MonoBehaviour
 
     private void Destroy()
     {
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
+        Destroy(gameObject);
     }
 }
