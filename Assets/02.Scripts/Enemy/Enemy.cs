@@ -12,7 +12,6 @@ public class Enemy : MonoBehaviour
 
     Transform targetDestination;
     GameObject targetGameobject;
-    PlayerController targetCharacter;
 
     public GameObject hudDamageText;
     public Transform hudPos;
@@ -22,6 +21,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float damage = 1;
     [SerializeField] private float currentHp = 50f;
     [SerializeField] private float maxHp = 50f;
+    [SerializeField] int experience_reward = 400;
 
     bool follow = true;
     bool canMove = true;
@@ -37,8 +37,6 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
-        //FollowTarget();
-
         if (targetGameobject.transform.position.x < transform.position.x)
         {
             rend.flipX = true;
@@ -61,17 +59,6 @@ public class Enemy : MonoBehaviour
         targetDestination = target.transform;
     }
 
-    /*void FollowTarget()
-    {
-        if (Vector2.Distance(transform.position, target.position) > contactDistance && follow && canMove)
-        {
-            transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
-        }
-        else
-        {
-            rigid.velocity = Vector2.zero;
-        }
-    }*/
     private void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.GetComponent<PlayerController>())
@@ -111,8 +98,8 @@ public class Enemy : MonoBehaviour
         if (currentHp <= 0)
         {
             coll2d.isTrigger = true;
+            GameObject.Find("Player").GetComponent<Level>().AddExperience(experience_reward);
             speed = 0;
-            //StopCoroutine(ColorEffect());
             anim.SetTrigger("Die");
             Invoke("Destroy", 0.35f);          
         }
