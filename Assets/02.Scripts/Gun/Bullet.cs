@@ -33,7 +33,7 @@ public class Bullet : MonoBehaviour
         {
             Enemy enemy = collision.gameObject.GetComponent<Enemy>();
             enemy.EnemyTakeDamage(bulletDmg);
-            DestroyBullet();
+            gameObject.SetActive(false);
         }
     }
 }

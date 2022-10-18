@@ -367,8 +367,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_NoiseProfile: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
   m_PivotOffset: {x: 0, y: 0, z: 0}
-  m_AmplitudeGain: 1
-  m_FrequencyGain: 1
+  m_AmplitudeGain: 0
+  m_FrequencyGain: 2.5
   mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1 &472459483
 GameObject:
@@ -1913,10 +1913,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 369a577d49ef80a47924e65e7e952946, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 3180089504626002585, guid: 4a9ab9bee49e44742956361afc10879e, type: 3}
   pos: {fileID: 1355865421}
   cooltime: 0.175
   gunModel: {fileID: 18030605}
+  PoolBullet: {fileID: 3180089504626002585, guid: 4a9ab9bee49e44742956361afc10879e, type: 3}
+  PoolBullets:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   shootSound:
   - {fileID: 8300000, guid: 2325785930df6694ba85e65dbd32ccbc, type: 3}
 --- !u!114 &1710359697
