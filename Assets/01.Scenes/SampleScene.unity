@@ -909,6 +909,7 @@ MonoBehaviour:
   ShakeAmplitude: 1.75
   ShakeFrequency: 2.25
   VirtualCamera: {fileID: 1320103740}
+  playerAttack: {fileID: 1710359696}
 --- !u!1 &974521542
 GameObject:
   m_ObjectHideFlags: 0
@@ -1948,8 +1949,10 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  reloading: 0
   shootSound:
   - {fileID: 8300000, guid: 2325785930df6694ba85e65dbd32ccbc, type: 3}
+  - {fileID: 8300000, guid: 743756b6dd74108459d975c025f65772, type: 3}
 --- !u!114 &1710359697
 MonoBehaviour:
   m_ObjectHideFlags: 0
