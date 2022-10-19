@@ -23,7 +23,7 @@ public class CameraShake : MonoBehaviour
 
     void Update()
     {
-        if(!playerAttack.reloading)
+        if(!playerAttack.reloading)//djdjdjdj
         {
             if ((Input.GetMouseButtonDown(0) || Input.GetMouseButton(0)))
             {
