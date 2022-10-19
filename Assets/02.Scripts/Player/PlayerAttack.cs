@@ -15,7 +15,9 @@ public class PlayerAttack : MonoBehaviour
     public bool reloading;
     private float reloadtime = 1f;
     private float chargingtime;
+    private int bulletTextCount = 30;
 
+    [SerializeField] TMPro.TextMeshProUGUI bulletText;
     AudioSource audio1;
     [SerializeField] AudioClip[] shootSound;
 
@@ -33,6 +35,7 @@ public class PlayerAttack : MonoBehaviour
 
     void Update()
     {
+        bulletText.text = $"{bulletTextCount}/" + PoolBullets.Length.ToString();
         Vector2 len = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         float z = Mathf.Atan2(len.y, len.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, z);
@@ -67,6 +70,7 @@ public class PlayerAttack : MonoBehaviour
     public void Reload()
     {
         bulletCount = 0;
+        bulletTextCount = 30;
         reloading = true;
         audio1.clip = shootSound[1];
         audio1.PlayOneShot(shootSound[1]);
@@ -77,6 +81,7 @@ public class PlayerAttack : MonoBehaviour
         PoolBullets[bulletCount].transform.position = pos.position;
         PoolBullets[bulletCount].transform.rotation = transform.rotation;
         bulletCount++;
+        bulletTextCount--;
         audio1.clip = shootSound[0];
         audio1.PlayOneShot(shootSound[0]);
     }
