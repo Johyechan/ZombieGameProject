@@ -15,7 +15,6 @@ public class CameraShake : MonoBehaviour
     public CinemachineVirtualCamera VirtualCamera;
     private CinemachineBasicMultiChannelPerlin virtualCameraNoise;
 
-    public PlayerAttack playerAttack;
     void Start()
     {
         virtualCameraNoise = VirtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
@@ -23,16 +22,13 @@ public class CameraShake : MonoBehaviour
 
     void Update()
     {
-        if(!playerAttack.reloading)
+        if (Input.GetMouseButtonDown(0) || Input.GetMouseButton(0))
         {
-            if ((Input.GetMouseButtonDown(0) || Input.GetMouseButton(0)))
-            {
-                ShakeAmplitude = 2f;
-                ShakeFrequency = 2.5f;
-                ShakeElapsedTime = ShakeDuration;
-            }
+            ShakeAmplitude = 2f;
+            ShakeFrequency = 2.5f;
+            ShakeElapsedTime = ShakeDuration;
         }
-        
+
         if (VirtualCamera != null && virtualCameraNoise != null)
         {
             if (ShakeElapsedTime > 0)
