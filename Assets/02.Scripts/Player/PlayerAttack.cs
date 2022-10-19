@@ -11,10 +11,7 @@ public class PlayerAttack : MonoBehaviour
     public GameObject gunModel;
     public GameObject PoolBullet;
     public GameObject[] PoolBullets = new GameObject[30];
-    public int bulletCount = 0;
-    private int bulletTextCount = 30;
-
-    [SerializeField] TMPro.TextMeshProUGUI bulletText;
+    private int bulletCount = 0;
 
     AudioSource audio1;
     [SerializeField] AudioClip[] shootSound;
@@ -31,7 +28,6 @@ public class PlayerAttack : MonoBehaviour
 
     void Update()
     {
-        bulletText.text = $"{bulletTextCount}/" + PoolBullets.Length.ToString();
         Reload();
         Vector2 len = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         float z = Mathf.Atan2(len.y, len.x) * Mathf.Rad2Deg;
@@ -44,7 +40,6 @@ public class PlayerAttack : MonoBehaviour
                 PoolBullets[bulletCount].transform.position = pos.position;
                 PoolBullets[bulletCount].transform.rotation = transform.rotation;
                 bulletCount++;
-                bulletTextCount--;
                 audio1.clip = shootSound[0];
                 audio1.PlayOneShot(shootSound[0]);
             }
@@ -60,7 +55,6 @@ public class PlayerAttack : MonoBehaviour
             for(int i = 0; i < PoolBullets.Length; i++)
             {
                 bulletCount = 0;
-                bulletTextCount = 30;
             }
         }
     }
