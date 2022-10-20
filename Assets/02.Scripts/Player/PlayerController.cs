@@ -86,8 +86,7 @@ public class PlayerController : MonoBehaviour
     }
 
     public void TakeDamage(float damage)
-    {
-        
+    {      
         currentHp -= damage;
         if(currentHp <= 0)
         {

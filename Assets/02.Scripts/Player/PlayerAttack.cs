@@ -13,18 +13,22 @@ public class PlayerAttack : MonoBehaviour
     public GameObject[] PoolBullets = new GameObject[30];
     private int bulletCount = 0;
     public bool reloading;
-    private float reloadtime = 1f;
-    private float chargingtime;
+    public float reloadtime = 1f;
+    public float chargingtime;
     private int bulletTextCount = 30;
 
     [SerializeField] TMPro.TextMeshProUGUI bulletText;
     AudioSource audio1;
     [SerializeField] AudioClip[] shootSound;
-
+    [SerializeField] ReloadBar reloadBar;
+    [SerializeField] GameObject reloadbar;
+    [SerializeField] GameObject reloadbarBase;
 
     void Start()
     {
         reloading = false;
+        reloadbar.SetActive(false);
+        reloadbarBase.SetActive(false);
         audio1 = GetComponent<AudioSource>();
         for (int i = 0; i < PoolBullets.Length; i++)
         {
@@ -63,7 +67,11 @@ public class PlayerAttack : MonoBehaviour
         if(chargingtime >= reloadtime)
         {
             reloading = false;
+            reloadBar.canReload = false;
+            
             chargingtime = 0;
+            reloadbarBase.SetActive(false);
+            reloadbar.SetActive(false);
         }
     }
 
@@ -71,9 +79,12 @@ public class PlayerAttack : MonoBehaviour
     {
         bulletCount = 0;
         bulletTextCount = 30;
+        reloadbar.SetActive(true);
+        reloadbarBase.SetActive(true);
         reloading = true;
         audio1.clip = shootSound[1];
         audio1.PlayOneShot(shootSound[1]);
+        reloadBar.canReload = true;
     }
     public void bulletpool()
     {

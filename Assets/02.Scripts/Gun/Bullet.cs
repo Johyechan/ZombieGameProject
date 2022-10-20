@@ -35,5 +35,9 @@ public class Bullet : MonoBehaviour
             enemy.EnemyTakeDamage(bulletDmg);
             gameObject.SetActive(false);
         }
+        if (collision.gameObject.CompareTag("Wall"))
+        {
+            gameObject.SetActive(false);
+        }
     }
 }

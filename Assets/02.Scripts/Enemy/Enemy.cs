@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour
     SpriteRenderer rend;
     Rigidbody2D rigid;
     Animator anim;
-    CircleCollider2D coll2d;
+    CapsuleCollider2D coll2d;
 
     Transform targetDestination;
     GameObject targetGameobject;
@@ -27,7 +27,7 @@ public class Enemy : MonoBehaviour
     {
         rend = GetComponent<SpriteRenderer>();
         rigid = GetComponent<Rigidbody2D>();
-        coll2d = GetComponent<CircleCollider2D>();
+        coll2d = GetComponent<CapsuleCollider2D>();
         anim = GetComponent<Animator>();
         currentHp = maxHp;
     }
