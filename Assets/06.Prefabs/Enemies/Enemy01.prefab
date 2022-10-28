@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5939266662356428524}
   - component: {fileID: 5939266662356428515}
-  - component: {fileID: 5939266662356428513}
+  - component: {fileID: 2668947621960590548}
   - component: {fileID: -6700309320793774428}
   - component: {fileID: 5939266662356428519}
   - component: {fileID: 5939266662356428525}
@@ -90,7 +90,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5939266662356428513
+--- !u!114 &2668947621960590548
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -99,17 +99,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 5939266662356428518}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48473844437f8eb4380675697ed1bbd4, type: 3}
+  m_Script: {fileID: 11500000, guid: 001b41c758457e841bbc2afba2d7b210, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rend: {fileID: 0}
+  rigid: {fileID: 0}
+  anim: {fileID: 0}
+  coll2d: {fileID: 0}
+  targetDestination: {fileID: 0}
+  targetGameobject: {fileID: 0}
   hudDamageText: {fileID: 7152900031952370607, guid: 8bc5416d140dbda46b841a1cc4b2bc40, type: 3}
   hudPos: {fileID: 6233549694216234217}
-  speed: 3
-  contactDistance: 1
-  damage: 0.5
-  currentHp: 30
-  maxHp: 30
-  experience_reward: 400
+  enemy01_damage: 0.25
+  enemy01_speed: 3
+  enemy01_experience_reward: 400
+  enemy01_currentHp: 40
+  enemy01_maxHp: 40
 --- !u!114 &-6700309320793774428
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,7 +165,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: f9ad60c7fedfcfc4c9f9e2ae29cbe485, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0

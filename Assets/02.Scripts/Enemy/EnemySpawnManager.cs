@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class EnemySpawnManager : MonoBehaviour
 {
-    [SerializeField] GameObject enemy;
+    [SerializeField] GameObject[] enemy;
     [SerializeField] Vector2 spawnArea;
     [SerializeField] float minrandomValue = 1.5f;
     [SerializeField] float maxrandomValue = 3.5f;
+    float minrandomValue2 = 1.5f;
+    float maxrandomValue2 = 3.5f;
     [SerializeField] GameObject player;
     float spawnTimer;
     float timer = 0;
     float randTimer;
+    bool enem2 = false;
 
     private void Start()
     {
@@ -21,14 +24,20 @@ public class EnemySpawnManager : MonoBehaviour
 
     private IEnumerator SpawnSpeed()
     {
-        minrandomValue = 1.5f;
+        minrandomValue = 3.5f;
+        maxrandomValue = 5.0f;
+        yield return new WaitForSeconds(15);
+        minrandomValue = 2.0f;
         maxrandomValue = 3.5f;
-        yield return new WaitForSeconds(10);
-        minrandomValue = 0.5f;
-        maxrandomValue = 2.5f;
         yield return new WaitForSeconds(15);
         minrandomValue = 1.5f;
-        maxrandomValue = 3.5f;
+        maxrandomValue = 2.5f;
+        yield return new WaitForSeconds(5);
+        minrandomValue = 2f;
+        maxrandomValue = 4f;
+        minrandomValue2 = 4.5f;
+        maxrandomValue2 = 5.75f;
+        enem2 = true;     
     }
 
     private void Update()
@@ -40,6 +49,13 @@ public class EnemySpawnManager : MonoBehaviour
             timer = spawnTimer;
             randTimer = Random.Range(minrandomValue, maxrandomValue);
         }
+        timer += Time.deltaTime;
+        if (timer > randTimer && enem2 == true)
+        {
+            SpawnEnemy02();
+            timer = spawnTimer;
+            randTimer = Random.Range(minrandomValue2, maxrandomValue2);
+        }
     }
 
     private void SpawnEnemy()
@@ -48,7 +64,19 @@ public class EnemySpawnManager : MonoBehaviour
 
         position += player.transform.position;
 
-        GameObject newEnemy = Instantiate(enemy);
+        GameObject newEnemy = Instantiate(enemy[0]);
+        newEnemy.transform.position = position;
+        newEnemy.GetComponent<Enemy>().SetTarget(player);
+        newEnemy.transform.parent = transform;
+    }
+
+    private void SpawnEnemy02()
+    {
+        Vector3 position = GenerateRandomPosition();
+
+        position += player.transform.position;
+
+        GameObject newEnemy = Instantiate(enemy[1]);
         newEnemy.transform.position = position;
         newEnemy.GetComponent<Enemy>().SetTarget(player);
         newEnemy.transform.parent = transform;

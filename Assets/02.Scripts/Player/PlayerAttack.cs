@@ -56,7 +56,7 @@ public class PlayerAttack : MonoBehaviour
             curtime = cooltime;
         }
         curtime -= Time.deltaTime;
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R) && bulletTextCount < 30)
         {
             Reload();
         }

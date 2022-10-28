@@ -5,32 +5,24 @@ using DG.Tweening;
 
 public class Enemy : MonoBehaviour
 {
-    SpriteRenderer rend;
-    Rigidbody2D rigid;
-    Animator anim;
-    CapsuleCollider2D coll2d;
+    public SpriteRenderer rend;
+    public Rigidbody2D rigid;
+    public Animator anim;
+    public CapsuleCollider2D coll2d;
 
-    Transform targetDestination;
-    GameObject targetGameobject;
+    public Transform targetDestination;
+    public GameObject targetGameobject;
 
     public GameObject hudDamageText;
     public Transform hudPos;
     
-    [SerializeField] float speed; //이동속도
-    [SerializeField] [Range(0f, 3f)] float contactDistance = 1f;
-    [SerializeField] private float damage = 1;
-    [SerializeField] private float currentHp = 50f;
-    [SerializeField] private float maxHp = 50f;
-    [SerializeField] int experience_reward = 400;
+    float speed; //이동속도
+    [Range(0f, 3f)] float contactDistance = 1f;
+    private float damage = 1;
+    private float currentHp = 50f;
+    private float maxHp = 50f;
+    int experience_reward = 400;
 
-    private void Start()
-    {
-        rend = GetComponent<SpriteRenderer>();
-        rigid = GetComponent<Rigidbody2D>();
-        coll2d = GetComponent<CapsuleCollider2D>();
-        anim = GetComponent<Animator>();
-        currentHp = maxHp;
-    }
 
     private void Update()
     {
@@ -44,7 +36,12 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
+    public void FixedUpdate()
+    {
+        EnemyMove();
+    }
+
+    public virtual void EnemyMove()
     {
         Vector3 direction = (targetDestination.position - transform.position).normalized;
         rigid.velocity = direction * speed;
@@ -68,6 +65,7 @@ public class Enemy : MonoBehaviour
     {
         if (collision.gameObject.tag == "Bullet")
         {
+            
             StartCoroutine(ColorEffect());
         }
     } 
@@ -79,12 +77,12 @@ public class Enemy : MonoBehaviour
         rend.DOColor(Color.white, 0.15f);
     }
 
-    private void Attack()
+    public virtual void Attack()
     {
         GameObject.Find("Player").GetComponent<PlayerController>().TakeDamage(damage);
     }
 
-    public void EnemyTakeDamage(float damage)
+    public virtual void EnemyTakeDamage(float damage)
     {
         currentHp -= damage;
 
@@ -100,11 +98,5 @@ public class Enemy : MonoBehaviour
             anim.SetTrigger("Die");
             Invoke("Destroy", 0.35f);          
         }
-    }
-
-    private void Destroy()
-    {
-        //gameObject.SetActive(false);
-        Destroy(gameObject);
     }
 }
