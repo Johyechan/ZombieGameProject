@@ -17,10 +17,10 @@ public class Enemy : MonoBehaviour
     public Transform hudPos;
     
     float speed; //이동속도
-    [Range(0f, 3f)] float contactDistance = 1f;
+    //[Range(0f, 3f)] float contactDistance = 1f;
     private float damage = 1;
     private float currentHp = 50f;
-    private float maxHp = 50f;
+    //private float maxHp = 50f;
     int experience_reward = 400;
 
 

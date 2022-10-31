@@ -111,7 +111,7 @@ MonoBehaviour:
   hudDamageText: {fileID: 7152900031952370607, guid: 8bc5416d140dbda46b841a1cc4b2bc40, type: 3}
   hudPos: {fileID: 6233549694216234217}
   enemy01_damage: 0.25
-  enemy01_speed: 3
+  enemy01_speed: 2
   enemy01_experience_reward: 400
   enemy01_currentHp: 40
   enemy01_maxHp: 40

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6106268579785648606}
   - component: {fileID: 969442967518708375}
   - component: {fileID: 749717569476209687}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: AttackManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108,7 +108,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2838810503950983310}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: AttackPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -145,7 +145,7 @@ GameObject:
   - component: {fileID: 5939266662356428519}
   - component: {fileID: 5939266662356428525}
   - component: {fileID: 7121660189924439444}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Enemy02
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -209,7 +209,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -108454357525962208, guid: a26e7c276dacc394e84b073715964d62, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -250,7 +250,7 @@ MonoBehaviour:
   distance: 0
   bullet: {fileID: 8957916744809789613, guid: 62217618fa1d1ff40aa5b977bb3aaa6f, type: 3}
   atkPos: {fileID: 2838810503950983310}
-  cooltime: 1
+  cooltime: 0.85
   currenttime: 0
 --- !u!114 &-6700309320793774428
 MonoBehaviour:
@@ -265,7 +265,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dropItemPrefab: {fileID: 2804363128690401656, guid: 2d7c5ec50ab52d1489bee0d59a8cfdbf, type: 3}
-  chance: 0.698
+  chance: 0.7
 --- !u!95 &5939266662356428519
 Animator:
   serializedVersion: 4
@@ -332,7 +332,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6233549694216234217}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Pos
   m_TagString: Untagged
   m_Icon: {fileID: 0}

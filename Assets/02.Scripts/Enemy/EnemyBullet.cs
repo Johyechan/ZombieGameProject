@@ -5,7 +5,7 @@ using DG.Tweening;
 
 public class EnemyBullet : MonoBehaviour
 {
-    public float bulletSpeed;
+    [SerializeField] float bulletSpeed = 5;
     float bulletDmg;
     [SerializeField] private float BulletDamage = 15;
 
