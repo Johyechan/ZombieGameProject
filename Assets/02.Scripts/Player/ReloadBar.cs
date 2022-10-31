@@ -14,11 +14,11 @@ public class ReloadBar : MonoBehaviour
         gameObject.transform.position = new Vector3(firstPos.transform.position.x, firstPos.transform.position.y, 0);
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (canReload)
         {
-            transform.position = Vector3.MoveTowards(gameObject.transform.position, target.transform.position, 0.02f);
+            transform.position = Vector3.MoveTowards(gameObject.transform.position, target.transform.position, 0.025f);
             
         }
         else if (canReload == false)
