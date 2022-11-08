@@ -189,3 +189,4 @@ MonoBehaviour:
   alphaSpeed: 5
   destroyTime: 2
   damage: 0
+  bullet: {fileID: 3180089504626002586, guid: 4a9ab9bee49e44742956361afc10879e, type: 3}

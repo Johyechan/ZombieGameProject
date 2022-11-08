@@ -7,6 +7,7 @@ public class ReloadBar : MonoBehaviour
 {
     [SerializeField] GameObject firstPos;
     [SerializeField] GameObject target;
+    [SerializeField] PlayerAttack playerAttack;
     public bool canReload;
 
     private void OnEnable()
@@ -18,7 +19,7 @@ public class ReloadBar : MonoBehaviour
     {
         if (canReload)
         {
-            transform.position = Vector3.MoveTowards(gameObject.transform.position, target.transform.position, 0.025f);
+            transform.position = Vector3.MoveTowards(gameObject.transform.position, target.transform.position, 0.03f);
             
         }
         else if (canReload == false)

@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dropItemPrefab: {fileID: 2804363128690401656, guid: 2d7c5ec50ab52d1489bee0d59a8cfdbf, type: 3}
-  chance: 0.635
+  chance: 1
 --- !u!95 &5939266662356428519
 Animator:
   serializedVersion: 4

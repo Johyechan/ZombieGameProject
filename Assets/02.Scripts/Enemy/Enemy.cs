@@ -23,6 +23,8 @@ public class Enemy : MonoBehaviour
     //private float maxHp = 50f;
     int experience_reward = 400;
 
+    Bullet playerBullet;
+
 
     private void Update()
     {
@@ -84,11 +86,11 @@ public class Enemy : MonoBehaviour
 
     public virtual void EnemyTakeDamage(float damage)
     {
-        currentHp -= damage;
+        //currentHp -= damage;
 
-        GameObject hudText = Instantiate(hudDamageText);
-        hudText.transform.position = hudPos.position;
-        hudText.GetComponent<DamageText>().damage = damage;
+        //GameObject hudText = Instantiate(hudDamageText);
+        //hudText.transform.position = hudPos.position;
+        //hudText.GetComponent<DamageText>().damage = damage;
 
         if (currentHp <= 0)
         {

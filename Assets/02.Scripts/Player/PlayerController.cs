@@ -24,9 +24,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] public AudioClip[] CD;
 
     [Header("Stat")]
-    [SerializeField] float maxHp = 100;
-    [SerializeField] float currentHp = 100;
+    [SerializeField] public float maxHp = 100;
+    [SerializeField] public float currentHp = 100;
     [SerializeField] public float speed = 5.0f;
+    
 
     //private Vector3 moveDirecion = Vector3.zero;
 
