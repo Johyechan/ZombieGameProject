@@ -2700,6 +2700,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed556e9ba94402746adc6866c20e8e6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemySpawner: {fileID: 974521542}
   hpBar: {fileID: 1768143680}
   screenPosition: {x: 0, y: 0, z: 0}
   worldPos: {x: 0, y: 0, z: 0}
@@ -2871,8 +2872,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7d875cb73a08dca41a888274914989ec, type: 2}
   - {fileID: 11400000, guid: 54fcf3b191bfcfe4795cd87b934ac906, type: 2}
   - {fileID: 11400000, guid: 50bf2fb78f4bac74989f0948d8522c85, type: 2}
+  - {fileID: 11400000, guid: 33615dda896dff142a09d218010d811b, type: 2}
   acquiredUpgrades: []
-  _equiped: {fileID: 1191358863}
+  _euSO: {fileID: 11400000, guid: dd1594414195bb94da5b7624df3589e6, type: 2}
 --- !u!114 &1191358863
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2887,35 +2889,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerController: {fileID: 1191358858}
   playerAttack: {fileID: 1710359696}
-  upgrade01: 0
-  upgrade02: 0
-  upgrade03: 0
-  upgrade04: 0
-  upgrade05: 0
-  upgrade06: 0
-  upgrade07: 0
-  upgrade08: 0
-  upgrade09: 0
-  upgrade10: 0
-  upgrade11: 0
-  upgrade12: 0
-  upgrade13: 0
-  upgrade14: 0
-  upgraded01: 0
-  upgraded02: 0
-  upgraded03: 0
-  upgraded04: 0
-  upgraded05: 0
-  upgraded06: 0
-  upgraded07: 0
-  upgraded08: 0
-  upgraded09: 0
-  upgraded10: 0
-  upgraded11: 0
-  upgraded12: 0
-  upgraded13: 0
-  upgraded14: 0
-  hpPercent: 0
+  bullet: {fileID: 3180089504626002586, guid: 4a9ab9bee49e44742956361afc10879e, type: 3}
+  cinemachine: {fileID: 1320103740}
+  stealHpChance: 0.5
+  _euSO: {fileID: 11400000, guid: dd1594414195bb94da5b7624df3589e6, type: 2}
 --- !u!1 &1231354681
 GameObject:
   m_ObjectHideFlags: 0
@@ -4540,7 +4517,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1577307540
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5057,6 +5034,7 @@ MonoBehaviour:
   reloadtime: 1
   chargingtime: 0
   isupgradedDamage: 0
+  isPenetrated: 0
   bulletText: {fileID: 1639063747}
   shootSound:
   - {fileID: 8300000, guid: 2325785930df6694ba85e65dbd32ccbc, type: 3}

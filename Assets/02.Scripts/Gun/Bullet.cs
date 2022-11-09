@@ -5,21 +5,19 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public float speed;
-    Animator anim;
+    public BoxCollider2D coll;
 
     [SerializeField] private float bulletDamage;
     public float BulletDamage { get => bulletDamage; set => bulletDamage = value; }
 
     void Start()
     {
-        //bulletDamage = 10;
-        Invoke("DestroyBullet", 1.5f);
-        anim = GetComponent<Animator>();
+        Invoke("DestroyBullet", 2f);
+        coll = GetComponent<BoxCollider2D>();
     }
 
     void Update()
-    {
-        //bulletDmg = Random.Range(BulletDamage - 1.0f, BulletDamage + 3.0f);
+    {       
         transform.Translate(Vector2.right * speed * Time.deltaTime);
     }
 
@@ -39,6 +37,15 @@ public class Bullet : MonoBehaviour
         if (collision.gameObject.CompareTag("Wall"))
         {
             gameObject.SetActive(false);
+        }
+    }
+
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            Enemy enemy = other.gameObject.GetComponent<Enemy>();
+            enemy.EnemyTakeDamage(BulletDamage);
         }
     }
 }

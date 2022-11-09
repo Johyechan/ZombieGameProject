@@ -20,14 +20,16 @@ public class PlayerAttack : MonoBehaviour
     public float reloadtime = 1f;
     public float chargingtime;
     private int bulletTextCount = 30;
+
     public bool isupgradedDamage = false;
+    public bool isPenetrated = false;
 
     [SerializeField] TMPro.TextMeshProUGUI bulletText;
     AudioSource audio1;
     [SerializeField] AudioClip[] shootSound;
     [SerializeField] ReloadBar reloadBar;
     [SerializeField] GameObject reloadbar;
-    [SerializeField] GameObject reloadbarBase;  
+    [SerializeField] GameObject reloadbarBase;
 
     void Start()
     {
@@ -98,14 +100,20 @@ public class PlayerAttack : MonoBehaviour
         PoolBullets[bulletCount].SetActive(true);
         PoolBullets[bulletCount].transform.position = pos.position;
         PoolBullets[bulletCount].transform.rotation = transform.rotation;
-        if(isupgradedDamage == false)
+        if (isupgradedDamage == false)
         {
             PoolBullets[bulletCount].GetComponent<Bullet>().BulletDamage = bulletDamage;
         }
         else if (isupgradedDamage)
-        {
             PoolBullets[bulletCount].GetComponent<Bullet>().BulletDamage = upgradeDamage;
+
+        if(isPenetrated == false)
+        {
+            PoolBullets[bulletCount].GetComponent<Bullet>().coll.isTrigger = false;
         }
+        else if (isPenetrated)
+            PoolBullets[bulletCount].GetComponent<Bullet>().coll.isTrigger = true;
+
         bulletCount++;
         bulletTextCount--;
         audio1.clip = shootSound[0];

@@ -15,8 +15,8 @@ public class Level : MonoBehaviour
 
     [SerializeField] List<UpgradeData> acquiredUpgrades;
 
-    [SerializeField] EquipedUpgrade _equiped;
-
+    [SerializeField]
+    private EquipedUpgradeSO _euSO;
     int TO_LEVEL_UP
     {
         get
@@ -35,45 +35,57 @@ public class Level : MonoBehaviour
     {
         foreach (var item in acquiredUpgrades)
         {
-            if (item.UpgradeCode == 1 && _equiped.upgraded01 == false)
+            if (item.UpgradeCode == 1 && _euSO.upgraded01 == false)
             {
-                _equiped.upgrade01 = true;
+                _euSO.upgrade01 = true;
             }
-            if (item.UpgradeCode == 2 && _equiped.upgraded02 == false)
+            if (item.UpgradeCode == 2 && _euSO.upgraded02 == false)
             {
-                _equiped.upgrade02 = true;
+                _euSO.upgrade02 = true;
             }
-            if (item.UpgradeCode == 3 && _equiped.upgraded03 == false)
+            if (item.UpgradeCode == 3 && _euSO.upgraded03 == false)
             {
-                _equiped.upgrade03 = true;
+                _euSO.upgrade03 = true;
             }
-            if (item.UpgradeCode == 4 && _equiped.upgraded04 == false)
+            if (item.UpgradeCode == 4 && _euSO.upgraded04 == false)
             {
-                _equiped.upgrade04 = true;
+                _euSO.upgrade04 = true;
             }
-            if (item.UpgradeCode == 5 && _equiped.upgraded05 == false)
+            if (item.UpgradeCode == 5 && _euSO.upgraded05 == false)
             {
-                _equiped.upgrade05 = true;
+                _euSO.upgrade05 = true;
             }
-            if (item.UpgradeCode == 6 && _equiped.upgraded06 == false)
+            if (item.UpgradeCode == 6 && _euSO.upgraded06 == false)
             {
-                _equiped.upgrade06 = true;
+                _euSO.upgrade06 = true;
             }
-            if (item.UpgradeCode == 7 && _equiped.upgraded07 == false)
+            if (item.UpgradeCode == 7 && _euSO.upgraded07 == false)
             {
-                _equiped.upgrade07 = true;
+                _euSO.upgrade07 = true;
             }
-            if (item.UpgradeCode == 8 && _equiped.upgraded08 == false)
+            if (item.UpgradeCode == 8 && _euSO.upgraded08 == false)
             {
-                _equiped.upgrade08 = true;
+                _euSO.upgrade08 = true;
             }
-            if (item.UpgradeCode == 9 && _equiped.upgraded09 == false)
+            if (item.UpgradeCode == 9 && _euSO.upgraded09 == false)
             {
-                _equiped.upgrade09 = true;
+                _euSO.upgrade09 = true;
             }
-            if (item.UpgradeCode == 10 && _equiped.upgraded10 == false)
+            if (item.UpgradeCode == 10 && _euSO.upgraded10 == false)
             {
-                _equiped.upgrade10 = true;
+                _euSO.upgrade10 = true;
+            }
+            if (item.UpgradeCode == 11 && _euSO.upgraded11 == false)
+            {
+                _euSO.upgrade11 = true;
+            }
+            if (item.UpgradeCode == 12 && _euSO.upgraded12 == false)
+            {
+                _euSO.upgrade12 = true;
+            }
+            if (item.UpgradeCode == 13 && _euSO.upgraded13 == false)
+            {
+                _euSO.upgrade13 = true;
             }
         }
     }

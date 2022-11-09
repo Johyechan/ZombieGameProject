@@ -11,8 +11,11 @@ public class Enemy_01 : Enemy
     [SerializeField] private float enemy01_currentHp = 40f;
     [SerializeField] private float enemy01_maxHp = 40f;
 
+    //PlayerController playerController;
+
     void Start()
     {
+        playerController = GetComponent<PlayerController>();
         rend = GetComponent<SpriteRenderer>();
         rigid = GetComponent<Rigidbody2D>();
         coll2d = GetComponent<CapsuleCollider2D>();
@@ -45,6 +48,7 @@ public class Enemy_01 : Enemy
         {
             coll2d.isTrigger = true;
             GameObject.Find("Player").GetComponent<Level>().AddExperience(enemy01_experience_reward);
+            GameObject.Find("Player").GetComponent<EquipedUpgrade>().StealHp();
             enemy01_speed = 0;
             anim.SetTrigger("Die");
             Invoke("Destroy", 0.35f);
