@@ -108,6 +108,7 @@ MonoBehaviour:
   coll2d: {fileID: 0}
   targetDestination: {fileID: 0}
   targetGameobject: {fileID: 0}
+  playerController: {fileID: 0}
   hudDamageText: {fileID: 7152900031952370607, guid: 8bc5416d140dbda46b841a1cc4b2bc40, type: 3}
   hudPos: {fileID: 6233549694216234217}
   enemy01_damage: 0.25
@@ -128,7 +129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dropItemPrefab: {fileID: 2804363128690401656, guid: 2d7c5ec50ab52d1489bee0d59a8cfdbf, type: 3}
-  chance: 0.635
+  chance: 0.75
 --- !u!95 &5939266662356428519
 Animator:
   serializedVersion: 4

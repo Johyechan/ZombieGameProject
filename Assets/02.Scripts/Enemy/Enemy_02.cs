@@ -67,7 +67,7 @@ public class Enemy_02 : Enemy
 
         if (enemy02_currentHp <= 0)
         {
-            coll2d.isTrigger = true;
+            coll2d.enabled = false;
             GameObject.Find("Player").GetComponent<Level>().AddExperience(enemy02_experience_reward);
             enemy02_speed = 0;
             anim.SetTrigger("Die");

@@ -18,8 +18,11 @@ public class EnemySpawnManager : MonoBehaviour
     float randTimer2;
     bool enem2 = false;
 
+    Camera cam;
+
     private void Start()
     {
+        cam = UnityEngine.Camera.main;
         randTimer = Random.Range(minrandomValue, maxrandomValue);
         randTimer2 = Random.Range(minrandomValue2, maxrandomValue2);
         StartCoroutine(SpawnSpeed());
@@ -50,6 +53,7 @@ public class EnemySpawnManager : MonoBehaviour
 
     private void Update()
     {
+        DestroyEnemiesInCamera();
         timer += Time.deltaTime;
         if(timer > randTimer)
         {
@@ -64,6 +68,18 @@ public class EnemySpawnManager : MonoBehaviour
             SpawnEnemy02();
             timer2 = spawnTimer;
             randTimer2 = Random.Range(minrandomValue2, maxrandomValue2);
+        }
+    }
+
+    public void DestroyEnemiesInCamera()
+    {
+        for (int i = 0; i < enemy.Length; i++)
+        {
+            Vector3 viewPos = cam.WorldToScreenPoint(enemy[i].transform.position);
+            if (viewPos.x >= 0 && viewPos.x <= 1 && viewPos.y >= 0 && viewPos.y <= 1 && viewPos.z > 0)
+            {
+                Debug.Log($"Camer in Object : {enemy[i].name}");
+            }
         }
     }
 
