@@ -97,7 +97,7 @@ public class Enemy : MonoBehaviour
         //hudText.transform.position = hudPos.position;
         //hudText.GetComponent<DamageText>().damage = damage;
 
-        if (currentHp <= 0)
+        /*if (currentHp <= 0)
         {
             coll2d.isTrigger = true;
             GameObject.Find("Player").GetComponent<Level>().AddExperience(experience_reward);
@@ -105,6 +105,6 @@ public class Enemy : MonoBehaviour
             speed = 0;
             anim.SetTrigger("Die");
             Invoke("Destroy", 0.35f);
-        }
+        }*/
     }
 }

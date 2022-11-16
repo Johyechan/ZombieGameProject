@@ -101,7 +101,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 100
+  m_text: 10
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bd5099f25c5b3c04d8108b722da3972c, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -189,4 +189,3 @@ MonoBehaviour:
   alphaSpeed: 5
   destroyTime: 2
   damage: 0
-  bullet: {fileID: 3180089504626002586, guid: 4a9ab9bee49e44742956361afc10879e, type: 3}

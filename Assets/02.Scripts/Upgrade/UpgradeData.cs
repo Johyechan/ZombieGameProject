@@ -5,7 +5,8 @@ using UnityEngine;
 public enum UpgradeType
 {
     ItemUpgrade,
-    PassiveUpgrade
+    PassiveUpgrade,
+    PassiveLevelUp
 }
 
 [CreateAssetMenu]

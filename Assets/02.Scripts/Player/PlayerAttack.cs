@@ -8,6 +8,7 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private float bulletDamage;
     public float BulletDamage { get => bulletDamage; set => bulletDamage = value; }
     public float upgradeDamage;
+    public float nerfedDamage;
 
     public Transform pos;
     public float cooltime;
@@ -19,9 +20,10 @@ public class PlayerAttack : MonoBehaviour
     public bool reloading;
     public float reloadtime = 1f;
     public float chargingtime;
-    private int bulletTextCount = 30;
+    public int bulletTextCount = 30;
 
     public bool isupgradedDamage = false;
+    public bool isNerfedDamage = false;
     public bool isPenetrated = false;
 
     [SerializeField] TMPro.TextMeshProUGUI bulletText;
@@ -34,6 +36,7 @@ public class PlayerAttack : MonoBehaviour
     void Start()
     {
         reloading = false;
+     
         reloadbar.SetActive(false);
         reloadbarBase.SetActive(false);
         audio1 = GetComponent<AudioSource>();
@@ -47,6 +50,7 @@ public class PlayerAttack : MonoBehaviour
     void Update()
     {
         upgradeDamage = bulletDamage * 1.3f;
+        nerfedDamage = bulletDamage * 0.9f;
 
         bulletText.text = $"{bulletTextCount}/" + PoolBullets.Length.ToString();
         Vector2 len = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
@@ -100,14 +104,15 @@ public class PlayerAttack : MonoBehaviour
         PoolBullets[bulletCount].SetActive(true);
         PoolBullets[bulletCount].transform.position = pos.position;
         PoolBullets[bulletCount].transform.rotation = transform.rotation;
-        if (isupgradedDamage == false)
+
+        if (isNerfedDamage == false)
         {
             PoolBullets[bulletCount].GetComponent<Bullet>().BulletDamage = bulletDamage;
         }
-        else if (isupgradedDamage)
-            PoolBullets[bulletCount].GetComponent<Bullet>().BulletDamage = upgradeDamage;
+        else if (isNerfedDamage)
+            PoolBullets[bulletCount].GetComponent<Bullet>().BulletDamage = nerfedDamage;
 
-        if(isPenetrated == false)
+        if (isPenetrated == false)
         {
             PoolBullets[bulletCount].GetComponent<Bullet>().coll.isTrigger = false;
         }

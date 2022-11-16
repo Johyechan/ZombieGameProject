@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24fcdd1e8d629a44190667bf09a0e511, type: 3}
+  m_Name: "\uD604\uBA85\uD55C \uC9C0\uD61C"
+  m_EditorClassIdentifier: 
+  upgradeType: 0
+  Name: "\uD604\uBA85\uD55C \uC9C0\uD61C"
+  UpgradeCode: 5
+  Explain: "\uB808\uBCA8\uC5C5\uC5D0 \uD544\uC694\uD55C \uCD5C\uB300 \uACBD\uD5D8\uCE58\uB7C9\uC774
+    \uAC10\uC18C\uD569\uB2C8\uB2E4."
+  icon: {fileID: 21300000, guid: 35d0c08a9599ef046bc6d7832507289c, type: 3}

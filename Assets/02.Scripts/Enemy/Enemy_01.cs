@@ -46,9 +46,9 @@ public class Enemy_01 : Enemy
 
         if (enemy01_currentHp <= 0)
         {
-            coll2d.isTrigger = true;
+            coll2d.enabled = false;
             GameObject.Find("Player").GetComponent<Level>().AddExperience(enemy01_experience_reward);
-            GameObject.Find("Player").GetComponent<EquipedUpgrade>().StealHp();
+            GameObject.Find("Player").GetComponent<EquipedUpgrade>().StealHp();           
             enemy01_speed = 0;
             anim.SetTrigger("Die");
             Invoke("Destroy", 0.35f);

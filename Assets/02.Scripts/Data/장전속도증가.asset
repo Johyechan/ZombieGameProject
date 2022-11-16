@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: "\uC7A5\uC804\uC18D\uB3C4\uC99D\uAC00"
   m_EditorClassIdentifier: 
   upgradeType: 1
-  Name: "\uBE60\uB978 \uC7AC\uC7A5\uC804"
+  Name: "\uBE60\uB978 \uC7AC\uC7A5\uC804 1\uB808\uBCA8"
   UpgradeCode: 8
   Explain: "\uC7AC\uC7A5\uC804 \uC18D\uB3C4\uAC00 \uC77C\uC815\uB7C9 \uAC10\uC18C\uD569\uB2C8\uB2E4."
   icon: {fileID: 21300000, guid: 549b709f0aad94345bfdb59e838b4928, type: 3}

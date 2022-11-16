@@ -8,6 +8,7 @@ public class Bullet : MonoBehaviour
     public BoxCollider2D coll;
 
     [SerializeField] private float bulletDamage;
+
     public float BulletDamage { get => bulletDamage; set => bulletDamage = value; }
 
     void Start()
@@ -45,7 +46,7 @@ public class Bullet : MonoBehaviour
         if (other.gameObject.CompareTag("Enemy"))
         {
             Enemy enemy = other.gameObject.GetComponent<Enemy>();
-            enemy.EnemyTakeDamage(BulletDamage);
+            enemy.EnemyTakeDamage(bulletDamage);
         }
     }
 }
