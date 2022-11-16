@@ -27,6 +27,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float maxHp = 100;
     [SerializeField] float currentHp = 100;
     [SerializeField] public float speed = 5.0f;
+    public GameObject GameOverPanel;
 
     //private Vector3 moveDirecion = Vector3.zero;
 
@@ -76,6 +77,8 @@ public class PlayerController : MonoBehaviour
         {
             rend.flipX = false;
         }
+        
+        
 
         //체력 오버되지 않게 관리
         if(maxHp <= currentHp)
@@ -91,7 +94,9 @@ public class PlayerController : MonoBehaviour
         if(currentHp <= 0)
         {
             Debug.Log("GAME OVER");
-            gameObject.SetActive(false);
+            currentHp = 100;
+            currentHp++;
+            Pause();
         }
         hpBar.SetState(currentHp, maxHp);
     }
@@ -100,6 +105,13 @@ public class PlayerController : MonoBehaviour
     {
         currentHp += heal;
         hpBar.SetState(currentHp, maxHp);
+    }
+    public void Pause()
+    {
+        GameOverPanel.SetActive(true);
+       
+        Time.timeScale = 0f;
+       
     }
 
     private void OnCollisionStay2D(Collision2D collision)
