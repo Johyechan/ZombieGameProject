@@ -8,6 +8,8 @@ TagManager:
   - Bullet
   - Wall
   - EnemyBullet
+  - Coin
+  - PlayerBubble
   layers:
   - Default
   - TransparentFX

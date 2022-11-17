@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
     Rigidbody2D rigid;
     Vector3 movementVector;
 
+    [SerializeField] GameObject enemySpawner;
+
     [SerializeField] HPBar hpBar;
 
     [Header ("Position")]
@@ -24,12 +26,15 @@ public class PlayerController : MonoBehaviour
     [SerializeField] public AudioClip[] CD;
 
     [Header("Stat")]
-    [SerializeField] float maxHp = 100;
-    [SerializeField] float currentHp = 100;
+    [SerializeField] public float maxHp = 100;
+    [SerializeField] public float currentHp = 100;
     [SerializeField] public float speed = 5.0f;
     public GameObject GameOverPanel;
+<<<<<<< HEAD
 
     //private Vector3 moveDirecion = Vector3.zero;
+=======
+>>>>>>> 1df978cb70db7606bd647b9381b5a30399c87c7d
 
     private void Start()
     {
@@ -43,14 +48,14 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        //¿òÁ÷ÀÓ
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         movementVector = new Vector3().normalized;
         movementVector.x = Input.GetAxisRaw("Horizontal");
         movementVector.y = Input.GetAxisRaw("Vertical");
         Vector3 direction = (movementVector).normalized;
         rigid.velocity = direction * speed;
 
-        //¾Ö´Ï¸ÞÀÌ¼Ç, »ç¿îµå
+        //ï¿½Ö´Ï¸ï¿½ï¿½Ì¼ï¿½, ï¿½ï¿½ï¿½ï¿½
         if (movementVector.x == 0 && movementVector.y == 0)
         {
             anim.SetBool("isRun", false);
@@ -63,7 +68,7 @@ public class PlayerController : MonoBehaviour
             audio1.volume = 0.25f;
         }
 
-        //¸¶¿ì½º ¹æÇâ µû¶ó ÁÂ¿ì¹ÝÀü
+        //ï¿½ï¿½ï¿½ì½º ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Â¿ï¿½ï¿½ï¿½ï¿½
         screenPosition = Input.mousePosition;
         screenPosition.z = Camera.main.nearClipPlane + 1;
         worldPos = Camera.main.ScreenToWorldPoint(screenPosition);
@@ -80,7 +85,7 @@ public class PlayerController : MonoBehaviour
         
         
 
-        //Ã¼·Â ¿À¹öµÇÁö ¾Ê°Ô °ü¸®
+        //Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê°ï¿½ ï¿½ï¿½ï¿½ï¿½
         if(maxHp <= currentHp)
         {
             currentHp = maxHp;
@@ -123,7 +128,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private IEnumerator ColorEffect() //ÇÇ°Ý ½Ã »¡°£»öÀ¸·Î º¯ÇÔ
+    private IEnumerator ColorEffect() //ï¿½Ç°ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     {
         rend.DOColor(Color.red, 0.1f);
         yield return new WaitForSeconds(0.1f);

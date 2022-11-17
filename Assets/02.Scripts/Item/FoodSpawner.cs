@@ -4,25 +4,34 @@ using UnityEngine;
 
 public class FoodSpawner : MonoBehaviour
 {
-    [SerializeField] GameObject food;
+    public GameObject food;
+    public List<GameObject> foodList = new List<GameObject>();
     [SerializeField] Vector2 spawnArea;
-    [SerializeField] float spawnTimer;
-    float timer;
+    [SerializeField] public float spawnTimer;
+    public float timer;
 
     private void Update()
     {
         timer -= Time.deltaTime;
-        if (timer < 0f)
+        if (foodList.Count <= 0)
         {
-            SpawnFood();
-            timer = spawnTimer;
+            if (timer < 0f)
+            {
+                SpawnFood();
+                timer = spawnTimer;
+            }
+        }      
+        else if (timer <= 0f)
+        {
+            timer = 1f;
         }
     }
 
-    private void SpawnFood()
+    public void SpawnFood()
     {
         Vector3 position = GenerateRandomPosition();
-        GameObject newEnemy = Instantiate(food);
+        GameObject newEnemy = Instantiate(food) as GameObject;
+        foodList.Add(newEnemy);
         newEnemy.transform.position = position;
         newEnemy.transform.parent = transform;
     }

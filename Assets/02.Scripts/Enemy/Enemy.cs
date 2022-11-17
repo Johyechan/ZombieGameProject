@@ -12,6 +12,7 @@ public class Enemy : MonoBehaviour
 
     public Transform targetDestination;
     public GameObject targetGameobject;
+    public PlayerController playerController;
 
     public GameObject hudDamageText;
     public Transform hudPos;
@@ -22,7 +23,6 @@ public class Enemy : MonoBehaviour
     private float currentHp = 50f;
     //private float maxHp = 50f;
     int experience_reward = 400;
-
 
     private void Update()
     {
@@ -64,11 +64,18 @@ public class Enemy : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Bullet")
-        {
-            
+        {          
             StartCoroutine(ColorEffect());
         }
-    } 
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Bullet")
+        {
+            StartCoroutine(ColorEffect());
+        }
+    }
 
     private IEnumerator ColorEffect() //피격 시 빨간색으로 변함
     {
@@ -84,19 +91,20 @@ public class Enemy : MonoBehaviour
 
     public virtual void EnemyTakeDamage(float damage)
     {
-        currentHp -= damage;
+        //currentHp -= damage;
 
-        GameObject hudText = Instantiate(hudDamageText);
-        hudText.transform.position = hudPos.position;
-        hudText.GetComponent<DamageText>().damage = damage;
+        //GameObject hudText = Instantiate(hudDamageText);
+        //hudText.transform.position = hudPos.position;
+        //hudText.GetComponent<DamageText>().damage = damage;
 
-        if (currentHp <= 0)
+        /*if (currentHp <= 0)
         {
             coll2d.isTrigger = true;
             GameObject.Find("Player").GetComponent<Level>().AddExperience(experience_reward);
+            GameObject.Find("Player").GetComponent<EquipedUpgrade>().StealHp();
             speed = 0;
             anim.SetTrigger("Die");
-            Invoke("Destroy", 0.35f);          
-        }
+            Invoke("Destroy", 0.35f);
+        }*/
     }
 }

@@ -8,11 +8,11 @@ public class HealFood : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("PlayerBubble"))
         {
-            Debug.Log("Heal");
+            GameObject.Find("--FoodSpawner--").GetComponent<FoodSpawner>().foodList.RemoveAt(0);
             GameObject.Find("Player").GetComponent<PlayerController>().Heal(heal);
-            gameObject.SetActive(false); 
+            gameObject.SetActive(false);
         }
     }
 }
