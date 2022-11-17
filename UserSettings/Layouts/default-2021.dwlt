@@ -120,7 +120,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 131
+  controlID: 125
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 80
+  controlID: 116
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -226,7 +226,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 35
+  controlID: 67
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -373,8 +373,8 @@ MonoBehaviour:
       floating: 0
       collapsed: 0
       displayed: 1
-      snapOffset: {x: 0, y: 0}
-      snapOffsetDelta: {x: -100, y: -25.600006}
+      snapOffset: {x: -100, y: -25.600006}
+      snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 3
       id: Tool Settings
       index: 0
@@ -384,9 +384,9 @@ MonoBehaviour:
       floating: 0
       collapsed: 0
       displayed: 1
-      snapOffset: {x: -141, y: 149}
+      snapOffset: {x: -141, y: -172.6}
       snapOffsetDelta: {x: 0, y: 0}
-      snapCorner: 1
+      snapCorner: 3
       id: unity-grid-and-snap-toolbar
       index: 1
       layout: 1
@@ -395,7 +395,7 @@ MonoBehaviour:
       floating: 0
       collapsed: 0
       displayed: 1
-      snapOffset: {x: 0, y: 0}
+      snapOffset: {x: 0, y: 24.8}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       id: unity-scene-view-toolbar
@@ -428,7 +428,7 @@ MonoBehaviour:
       floating: 0
       collapsed: 0
       displayed: 1
-      snapOffset: {x: 0, y: 0}
+      snapOffset: {x: 0, y: 24.8}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       id: Scene View/Tilemap Focus
@@ -587,9 +587,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -11.238034, y: 0.6109644, z: 0.21238366}
+    m_Target: {x: -6.6193337, y: 0.5565596, z: 0.1511415}
     speed: 2
-    m_Value: {x: -11.238034, y: 0.6109644, z: 0.21238366}
+    m_Value: {x: -6.6193337, y: 0.5565596, z: 0.1511415}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -640,9 +640,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 2.219804
+    m_Target: 9.176577
     speed: 2
-    m_Value: 2.219804
+    m_Value: 9.176577
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -704,6 +704,8 @@ MonoBehaviour:
     - {fileID: 5632667392142697987, guid: 82622bfcd3529824d9f692cdaf82901d, type: 2}
     - {fileID: -1644712454827102405, guid: baa67eee7fa8b9c4ba2715714aefac30, type: 2}
     - {fileID: -5425722489769283177, guid: b0c6973a3e37d3749a07d6f82c3afb36, type: 2}
+    - {fileID: 1266733961325038670, guid: 8c9b566f448e13743bdb5f17f4497884, type: 2}
+    - {fileID: -1718858858997990353, guid: 8985cc1a7fa19a34e949272541aa758a, type: 2}
     m_ValueSerializationHelper:
     - e00: 0.5882608
       e01: 0
@@ -817,10 +819,42 @@ MonoBehaviour:
       e31: 0
       e32: 0
       e33: 1
+    - e00: 0.5654736
+      e01: 0
+      e02: 0
+      e03: -13.273682
+      e10: 0
+      e11: 0.5654736
+      e12: 0
+      e13: 71.60633
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 0.5654736
+      e01: 0
+      e02: 0
+      e03: -13.273682
+      e10: 0
+      e11: 0.5654736
+      e12: 0
+      e13: 94.22528
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
   m_PreviewAnimator: {fileID: 0}
-  m_AnimatorController: {fileID: 9100000, guid: b0c6973a3e37d3749a07d6f82c3afb36, type: 2}
+  m_AnimatorController: {fileID: 9100000, guid: 8985cc1a7fa19a34e949272541aa758a, type: 2}
   m_BreadCrumbs:
-  - m_Target: {fileID: -5425722489769283177, guid: b0c6973a3e37d3749a07d6f82c3afb36, type: 2}
+  - m_Target: {fileID: -1718858858997990353, guid: 8985cc1a7fa19a34e949272541aa758a, type: 2}
     m_ScrollPosition: {x: 0, y: 0}
   stateMachineGraph: {fileID: 0}
   stateMachineGraphGUI: {fileID: 0}
@@ -983,7 +1017,7 @@ MonoBehaviour:
     m_SaveData: []
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 25108
+  m_LastSelectedObjectID: 25134
 --- !u!114 &19
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1017,7 +1051,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: dce8ffffc4faffff
+      m_ExpandedIDs: defaffff2e62000034620000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1082,22 +1116,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/06.Prefabs/Bullet
+    - Assets/02.Scripts/Enemy
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 61
   m_LastFolders:
-  - Assets/06.Prefabs/Bullet
+  - Assets/02.Scripts/Enemy
   m_LastFoldersGridSize: 61
   m_LastProjectPath: C:\Users\user\Documents\GitHub\ZombieGameProject
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 619}
-    m_SelectedIDs: 46690000
-    m_LastClickedID: 26950
-    m_ExpandedIDs: 00000000d2680000d4680000d6680000d8680000da680000dc680000de680000e0680000e2680000e4680000e6680000e8680000ea680000ec680000ee680000f0680000f2680000f468000000ca9a3b
+    scrollPos: {x: 0, y: 120}
+    m_SelectedIDs: 5a690000
+    m_LastClickedID: 26970
+    m_ExpandedIDs: 0000000030690000326900003469000036690000386900003a6900003c6900003e69000040690000426900004469000046690000486900004a6900004c6900004e690000506900005269000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1125,7 +1159,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000d2680000d4680000d6680000d8680000da680000dc680000de680000e0680000e2680000e4680000e6680000e8680000ea680000ec680000ee680000f0680000f2680000f4680000
+    m_ExpandedIDs: 0000000030690000326900003469000036690000386900003a6900003c6900003e69000040690000426900004469000046690000486900004a6900004c6900004e6900005069000052690000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

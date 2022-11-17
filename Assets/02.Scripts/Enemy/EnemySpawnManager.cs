@@ -5,92 +5,109 @@ using UnityEngine;
 public class EnemySpawnManager : MonoBehaviour
 {
     [SerializeField] GameObject[] enemy;
+
     [SerializeField] Vector2 spawnArea;
-    float minrandomValue = 1.5f;
-    float maxrandomValue = 3.5f;
-    float minrandomValue2;
-    float maxrandomValue2;
-    float minrandomValue3;
-    float maxrandomValue3;
-    float minrandomValue4;
-    float maxrandomValue4;
+
+    float minrandomValue = 5f;
+    float maxrandomValue = 7f;
+    float minrandomValue2 = 8.5f;
+    float maxrandomValue2 = 9.5f;
+    float minrandomValue3 = 5f;
+    float maxrandomValue3 = 6f;
+    float minrandomValue4 = 10.5f;
+    float maxrandomValue4 = 11.5f;
+    float minrandomValue5 = 12f;
+    float maxrandomValue5 = 13f;
+
     [SerializeField] GameObject player;
+
     float spawnTimer = 0;
+
     float timer = 0;
     float timer2 = 0;
     float timer3 = 0;
     float timer4 = 0;
+    float timer5 = 0;
+
     float randTimer;
     float randTimer2;
     float randTimer3;
     float randTimer4;
+    float randTimer5;
+
     bool enem2 = false;
     bool enem3 = false;
     bool enem4 = false;
+    bool enem5 = false;
 
+    float minValue = 0.5f;
+    float waitTime = 15f;
     private void Start()
     {
         randTimer = Random.Range(minrandomValue, maxrandomValue);
         randTimer2 = Random.Range(minrandomValue2, maxrandomValue2);
         randTimer3 = Random.Range(minrandomValue3, minrandomValue3);
         randTimer4 = Random.Range(minrandomValue4, maxrandomValue4);
+        randTimer5 = Random.Range(minrandomValue5, maxrandomValue5);
         StartCoroutine(SpawnSpeed());
     }
 
     private IEnumerator SpawnSpeed()
     {
-        minrandomValue = 3.5f;
-        maxrandomValue = 5.0f;
-        yield return new WaitForSeconds(15);
-        minrandomValue = 2.0f;
-        maxrandomValue = 3.5f;
-        yield return new WaitForSeconds(15);
-        minrandomValue = 1.5f;
-        maxrandomValue = 2.5f;
-        yield return new WaitForSeconds(5);
-        minrandomValue = 2.5f;
-        maxrandomValue = 4.5f;
-        minrandomValue2 = 6.5f;
-        maxrandomValue2 = 7.5f;
+        yield return new WaitForSeconds(waitTime);
+        minrandomValue -= minValue;
+        maxrandomValue -= minValue;
+        yield return new WaitForSeconds(waitTime);
+        minrandomValue -= minValue;
+        maxrandomValue -= minValue;
+        yield return new WaitForSeconds(waitTime);
+        minrandomValue -= minValue;
+        maxrandomValue -= minValue;
+        minrandomValue2 -= minValue;
+        maxrandomValue2 -= minValue;
         enem2 = true;
-        yield return new WaitForSeconds(10);
-        minrandomValue = 3f;
-        maxrandomValue = 5f;
-        minrandomValue2 = 7f;
-        maxrandomValue2 = 8f;
-        yield return new WaitForSeconds(10);
-        minrandomValue = 3.5f;
-        maxrandomValue = 5.5f;
-        minrandomValue2 = 7.5f;
-        maxrandomValue2 = 8.5f;
-        yield return new WaitForSeconds(5);
-        minrandomValue = 4f;
-        maxrandomValue = 6f;
-        minrandomValue2 = 8f;
-        maxrandomValue2 = 9f;
-        minrandomValue3 = 5f;
-        maxrandomValue3 = 6f;
+        yield return new WaitForSeconds(waitTime);
+        minrandomValue -= minValue;
+        maxrandomValue -= minValue;
+        minrandomValue2 -= minValue;
+        maxrandomValue2 -= minValue;
+        yield return new WaitForSeconds(waitTime);
+        minrandomValue -= minValue;
+        maxrandomValue -= minValue;
+        minrandomValue2 -= minValue;
+        maxrandomValue2 -= minValue;
+        yield return new WaitForSeconds(waitTime);
+        minrandomValue -= minValue;
+        maxrandomValue -= minValue;
+        minrandomValue2 -= minValue;
+        maxrandomValue2 -= minValue;
+        minrandomValue3 -= minValue;
+        maxrandomValue3 -= minValue;
         enem3 = true;
-        yield return new WaitForSeconds(10);
-        minrandomValue = 4.5f;
-        maxrandomValue = 6.5f;
-        minrandomValue2 = 8.5f;
-        maxrandomValue2 = 9.5f;
-        minrandomValue3 = 5.5f;
-        maxrandomValue3 = 6.5f;
-        yield return new WaitForSeconds(10);
-        minrandomValue = 4.5f;
-        maxrandomValue = 6.5f;
-        minrandomValue2 = 8.5f;
-        maxrandomValue2 = 9.5f;
-        minrandomValue3 = 5.5f;
-        maxrandomValue3 = 6.5f;
-        minrandomValue4 = 10f;
-        maxrandomValue4 = 11f;
+        yield return new WaitForSeconds(waitTime);
+        minrandomValue -= minValue;
+        maxrandomValue -= minValue;
+        minrandomValue2 -= minValue;
+        maxrandomValue2 -= minValue;
+        minrandomValue3 -= minValue;
+        maxrandomValue3 -= minValue;
+        minrandomValue4 -= minValue;
+        maxrandomValue4 -= minValue;
         enem4 = true;
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(waitTime);
+        minrandomValue -= minValue;
+        maxrandomValue -= minValue;
+        minrandomValue2 -= minValue;
+        maxrandomValue2 -= minValue;
+        minrandomValue3 -= minValue;
+        maxrandomValue3 -= minValue;
+        minrandomValue4 -= minValue;
+        maxrandomValue4 -= minValue;
+        minrandomValue5 -= minValue;
+        maxrandomValue5 -= minValue;
+        enem5 = true;
+        yield return new WaitForSeconds(waitTime);
     }
-
     private void Update()
     {
         timer += Time.deltaTime;
@@ -122,6 +139,13 @@ public class EnemySpawnManager : MonoBehaviour
             SpawnEnemy04();
             timer4 = spawnTimer;
             randTimer4 = Random.Range(minrandomValue4, maxrandomValue4);
+        }
+        timer5 += Time.deltaTime;
+        if (timer5 > randTimer5 && enem5 == true)
+        {
+            SpawnEnemy05();
+            timer5 = spawnTimer;
+            randTimer5 = Random.Range(minrandomValue5, maxrandomValue5);
         }
     }
 
@@ -167,6 +191,17 @@ public class EnemySpawnManager : MonoBehaviour
         position += player.transform.position;
 
         GameObject newEnemy = Instantiate(enemy[3]);
+        newEnemy.transform.position = position;
+        newEnemy.GetComponent<Enemy>().SetTarget(player);
+        newEnemy.transform.parent = transform;
+    }
+    private void SpawnEnemy05()
+    {
+        Vector3 position = GenerateRandomPosition();
+
+        position += player.transform.position;
+
+        GameObject newEnemy = Instantiate(enemy[4]);
         newEnemy.transform.position = position;
         newEnemy.GetComponent<Enemy>().SetTarget(player);
         newEnemy.transform.parent = transform;

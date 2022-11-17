@@ -62,7 +62,7 @@ Transform:
   m_GameObject: {fileID: 6753593243453813164}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3, y: -0.289, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3631132374223216778}
@@ -175,8 +175,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0023998746, y: -0.0061076884}
-  m_Size: {x: 0.17105663, y: 0.106641255}
+  m_Offset: {x: -0.025417661, y: -0.029125571}
+  m_Size: {x: 0.9843537, y: 0.64372414}
   m_Direction: 1
 --- !u!114 &6753593243453813162
 MonoBehaviour:
@@ -211,7 +211,7 @@ MonoBehaviour:
   targetDestination: {fileID: 0}
   targetGameobject: {fileID: 0}
   hudDamageText: {fileID: 7152900031952370607, guid: 8bc5416d140dbda46b841a1cc4b2bc40, type: 3}
-  hudPos: {fileID: 6753593243453813167}
+  hudPos: {fileID: 3631132374223216778}
   enemy01_damage: 0.25
   enemy01_speed: 4
   enemy01_experience_reward: 400
