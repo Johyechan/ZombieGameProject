@@ -30,6 +30,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] public float currentHp = 100;
     [SerializeField] public float speed = 5.0f;
     public GameObject GameOverPanel;
+<<<<<<< HEAD
+
+    //private Vector3 moveDirecion = Vector3.zero;
+=======
+>>>>>>> 1df978cb70db7606bd647b9381b5a30399c87c7d
 
     private void Start()
     {
